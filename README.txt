@@ -1,1 +1,1 @@
-Esse projeto tem como objetivo solucionar um problema de logística, visando otimizar o fluxo de bens e serviços, resultando em maior eficiencia e redução de custos no transporte, através de estruturas de dados baseadas em grafos.
+#Roteamento de Veiculos - Este projeto tem como objetivo estudar e resolver problemas logísticos, com foco em otimizar o fluxo de bens e serviços. 
