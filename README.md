@@ -42,6 +42,12 @@ Utilizamos a linguagem de programação Python.
 
 - quantidadeDeVertices(nomeDoArquivo): Conta o número de vértices distintos (esquinas) presentes nas seções de arestas e arcos do arquivo.
 
+# Manual de uso 
+
+- Para usar um novo aqrquivo de teste, altere o nome do arquivo atual para o nome do arquivo de teste desejado.
+- ![arquivoteste](https://github.com/user-attachments/assets/9de2c217-640c-458c-b4d7-17182f90f6aa)
+
+
 - quantidadeDeVerticesRequeridos(nomeDoArquivo):  Conta quantas arestas requeridas estão presentes na seção ReN. do arquivo.
 
 - capacidadeDosVeiculos(nomeDoArquivo): Extrai a capacidade dos veículos a partir do arquivo de entrada e retorna um número inteiro representando a capacidade máxima de carga de um veículo.
