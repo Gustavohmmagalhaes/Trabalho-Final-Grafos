@@ -50,3 +50,5 @@ Utilizamos a linguagem de programação Python.
 
 - Para usar um novo aqrquivo de teste, altere o nome do arquivo atual para o nome do arquivo de teste desejado.
 - ![arquivoteste](https://github.com/user-attachments/assets/9de2c217-640c-458c-b4d7-17182f90f6aa)
+- Instale todas as bibliotecas incluindo a pip install pandas matplotlib networkx, para o arquivo de visualização.
+- Certifique-se de ter Etapa1_TrabalhoFinal.py e BHW1.dat (ou outra base de dados ) no mesmo diretório do script.
