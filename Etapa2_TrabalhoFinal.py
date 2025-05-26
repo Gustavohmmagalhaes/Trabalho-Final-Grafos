@@ -607,11 +607,46 @@ def executar_testes_em_pasta(pasta_testes, pasta_saida):
             except Exception as e:
                 print(f"Erro ao processar o arquivo {nome_arquivo}: {e}")
 
+import os
+import sys
+import tempfile
+import shutil
 
 if __name__ == "__main__":
- 
-    pasta_arquivos_teste = r"C:\Users\User\OneDrive\Documentos\Trabalho-Final-Grafos-2\MCGRP"
+    # Define a pasta de saída padrão (Resultados no mesmo diretório do script)
+    diretorio_atual_script = os.path.dirname(os.path.abspath(__file__))
+    pasta_resultados_saida = os.path.join(diretorio_atual_script, "Resultados")
 
-    pasta_resultados_saida = r"C:\Users\User\OneDrive\Documentos\Trabalho-Final-Grafos-2\G7_G10"
+    # Mensagem informativa para o usuário
+    print(">>> Por favor, informe um ARQUIVO .dat ou uma PASTA com arquivos .dat.")
+    print(">>> Uso esperado:")
+    print(f"    python {os.path.basename(__file__)} arquivo.dat [pasta_saida]")
+    print(f"    python {os.path.basename(__file__)} pasta_com_arquivos [pasta_saida]")
+    print("")
 
-    executar_testes_em_pasta(pasta_arquivos_teste, pasta_resultados_saida)
+    if len(sys.argv) > 1:
+        entrada = sys.argv[1]
+        caminho_entrada = os.path.join(diretorio_atual_script, entrada)
+
+        # Se passar uma pasta de saída personalizada
+        if len(sys.argv) > 2:
+            if os.path.isabs(sys.argv[2]):
+                pasta_resultados_saida = sys.argv[2]
+            else:
+                pasta_resultados_saida = os.path.join(diretorio_atual_script, sys.argv[2])
+
+        # Verifica se é um único arquivo .dat
+        if os.path.isfile(caminho_entrada) and caminho_entrada.endswith(".dat"):
+            with tempfile.TemporaryDirectory() as pasta_temp:
+                shutil.copy(caminho_entrada, pasta_temp)
+                executar_testes_em_pasta(pasta_temp, pasta_resultados_saida)
+
+        # Ou se é uma pasta com vários arquivos
+        elif os.path.isdir(caminho_entrada):
+            executar_testes_em_pasta(caminho_entrada, pasta_resultados_saida)
+
+        else:
+            print(f"Erro: '{entrada}' não é um arquivo .dat nem uma pasta válida.")
+    
+    else:
+        print(" Nenhum argumento fornecido.")
