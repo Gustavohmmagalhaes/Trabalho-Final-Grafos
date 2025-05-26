@@ -52,10 +52,21 @@ Utilizamos a linguagem de programação Python e o Google Colab para visualizaç
 
 - arcosRequeridos(arquivo): Retorna um conjunto de arcos requeridos, da seção 'ReA.'.
 
+- contar_elementos_requeridos(matriz_adjacencia): Conta o número de elementos positivos (> 0) na matriz de adjacência — ou seja, quantas arestas possuem peso positivo no grafo.
+
+- construir_rotas_ordenadas(g, capacidade_maxima_veiculo, no_inicial, debug): Constrói rotas ordenadas para veículos partindo de um nó inicial, atendendo a serviços obrigatórios (arestas, nós ou arcos com demanda) presentes no grafo g. O processo é iterativo, terminando quando todos os serviços obrigatórios são coletados, respeitando a capacidade do veículo. Se a demanda exceder a capacidade, encerra a rota e volta ao depósito.
+
+- coletar_servico_no(vertice): Coleta serviços se encontrar no caminho, verificando se a capacidade do veículo será excedida, coletando também demandas de nós (serviços no nó).
+
+- ler_capacidade(nome_arquivo): Lê a capacidade máxima do veículo a partir de um arquivo de entrada.
+
+- executar_testes_em_pastas(pasta_testes, pasta_saida):  executa testes automatizados, criando a pasta de saída se não existir, percorre todos os arquivos '.dat' da pasta de testes. Para cada arquivo: carrega os dados do grafo, lê a capacidade do veículo, executa o algoritmo de construção de rotas, salva os resultados em um arquivo '.dat' formatado na pasta de saída.
+
   
 # Manual de uso 
 
-- Para usar um novo aqrquivo de teste, altere o nome do arquivo atual para o nome do arquivo de teste desejado.
-- ![arquivoteste](https://github.com/user-attachments/assets/9de2c217-640c-458c-b4d7-17182f90f6aa)
 - Instale todas as bibliotecas incluindo a pip install pandas matplotlib networkx, para o arquivo de visualização.
-- Certifique-se de ter Etapa1_TrabalhoFinal.py e BHW1.dat (ou outra base de dados ) no mesmo diretório do script.
+- Certifique-se de ter Etapa2_TrabalhoFina.py e a pasta de arquivos de testes no mesmo diretório.
+- Abra o arquivo '.py' e altere o caminho da sua pasta de arquivos testes e pasta de resultados de saida.
+- Para executar todos os arquivos de testes juntos, apenas execute "python executar_testes_em_pasta.py".
+- Para executar apenas um arquivo por vez, execute "python executar_testes_em_pasta.py <nome_arquivo>".
