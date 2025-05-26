@@ -67,6 +67,6 @@ Utilizamos a linguagem de programação Python e o Google Colab para visualizaç
 
 - Instale todas as bibliotecas incluindo a pip install pandas matplotlib networkx, para o arquivo de visualização.
 - Certifique-se de ter Etapa2_TrabalhoFina.py e a pasta de arquivos de testes (ou arquivos de testes individuais) no mesmo diretório.
-- Abra o arquivo '.py' e altere o caminho da sua pasta de arquivos testes e pasta de resultados de saida.
+- Abra o arquivo '.py' e altere o nome da sua pasta de resultados de saida (se quiser).
 - Para executar todos os arquivos de testes juntos, apenas execute "python <Etapa2_TrabalhoFinal.py <nome_pasta>".
 - Para executar apenas um arquivo por vez, execute "python Etapa2_TrabalhoFinal.py <nome_arquivo>".
