@@ -29,13 +29,4 @@ def ler_no_inicial(nome_arquivo):
                     return int(partes[-1])
                 except ValueError:
                     continue
-    return 1  # valor padrão se não encontrar
-
-
-def listar_instancias(diretorio):
-    return [os.path.join(diretorio, nome) for nome in os.listdir(diretorio) if nome.endswith(".dat")]
-
-def garantir_pasta(pasta_saida):
-    if not os.path.exists(pasta_saida):
-        os.makedirs(pasta_saida)
-    return pasta_saida
+    return 1 
